@@ -134,7 +134,7 @@ setup(
     cmdclass={"build_ext": NinjaBuildExtension},
     python_requires=">=3.8",
     install_requires=[
-        "pybind11>=2.13,<3",
+        "pybind11>3",
         # "ninja",
         "pandas",
         "einops",

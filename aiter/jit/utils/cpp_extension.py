@@ -1544,7 +1544,7 @@ def _write_ninja_file_to_build_library(
         import pybind11
 
         extra_include_paths.append(pybind11.get_include())
-        common_cflags += [f"{x}" for x in _get_pybind11_abi_build_flags()]
+        # common_cflags += [f"{x}" for x in _get_pybind11_abi_build_flags()]
         common_cflags += [f"{x}" for x in _get_glibcxx_abi_build_flags()]
 
     # sysconfig.get_path('include') gives us the location of Python.h
@@ -1562,7 +1562,7 @@ def _write_ninja_file_to_build_library(
     if not torch_exclude:
         common_cflags.append(f"-DTORCH_EXTENSION_NAME={name}")
         common_cflags.append("-DTORCH_API_INCLUDE_EXTENSION_H")
-        common_cflags += [f"{x}" for x in _get_pybind11_abi_build_flags()]
+        # common_cflags += [f"{x}" for x in _get_pybind11_abi_build_flags()]
         common_cflags += [f"{x}" for x in _get_glibcxx_abi_build_flags()]
 
     # Windows does not understand `-isystem` and quotes flags later.

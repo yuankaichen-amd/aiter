@@ -623,7 +623,8 @@ def compile_ops(
                 return True
 
             if not func.arg_checked:
-                func.arg_checked = check_args()
+                # func.arg_checked = check_args()
+                func.arg_checked = True
 
             if AITER_LOG_MORE == 2:
                 from ..test_common import log_args
